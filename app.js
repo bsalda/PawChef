@@ -21,8 +21,8 @@ const state = {
 const FREE_RECIPE_IDS = ["chicken-rice-veggie", "beef-veggie-bowl", "salmon-quinoa"];
 
 const STRIPE_LINKS = {
-  monthly: "https://buy.stripe.com/REPLACE_WITH_MONTHLY_LINK",
-  yearly:  "https://buy.stripe.com/REPLACE_WITH_ANNUAL_LINK",
+  monthly: "https://buy.stripe.com/14A9AM93r1yX7C05iV1B601",
+  yearly:  "https://buy.stripe.com/eVq6oA3J76ThaOccLn1B600",
 };
 
 function isPro() {
@@ -765,3 +765,18 @@ renderSavedProfiles();
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") closeUpgradeModal();
 });
+
+// ---- Auto-activate Pro after Stripe redirect ----
+// Stripe sends users back to: https://bsalda.github.io/PawChef/?pro=1
+(function checkStripeReturn() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("pro") === "1") {
+    localStorage.setItem("pawchef_pro", "true");
+    updateProBanner();
+    // Clean URL without reloading
+    window.history.replaceState({}, "", window.location.pathname);
+    setTimeout(() => {
+      showToast("🎉 Welcome to PawChef Pro! All recipes & features unlocked.", "success");
+    }, 500);
+  }
+})();
