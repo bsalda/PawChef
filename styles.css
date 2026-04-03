@@ -889,6 +889,18 @@ h4.unsafe { color: var(--danger); }
 }
 .aff-btn.chewy:hover { background: #7dd3fc; }
 
+/* Affiliate disclaimer */
+.aff-disclaimer {
+  margin-top: 1.5rem;
+  padding: .75rem 1rem;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: var(--radius-sm);
+  font-size: .78rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+
 /* ===== PRO RECIPES HINT ===== */
 .pro-recipes-hint {
   grid-column: 1 / -1;
