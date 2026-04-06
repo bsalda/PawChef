@@ -2,7 +2,7 @@
 // External API calls (USDA FoodData Central, EmailJS, Stripe) are never
 // intercepted and always go directly to the network.
 
-const CACHE_NAME = 'pawchef-static-v1';
+const CACHE_NAME = 'pawchef-static-v2';
 
 const STATIC_ASSETS = [
   '/',
@@ -15,6 +15,10 @@ const STATIC_ASSETS = [
   '/usda.js',
   '/manifest.json',
   '/logo.svg',
+  '/icon-low.webp',
+  '/icon-moderate.webp',
+  '/icon-high.webp',
+  '/icon-working.webp',
   '/icons/icon-192.png',
   '/icons/icon-512.png',
 ];
