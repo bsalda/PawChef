@@ -6,6 +6,10 @@ const TYPES = {
   '.html': 'text/html',
   '.css':  'text/css',
   '.js':   'application/javascript',
+  '.json': 'application/json',
+  '.png':  'image/png',
+  '.svg':  'image/svg+xml',
+  '.ico':  'image/x-icon',
 };
 
 http.createServer((req, res) => {
