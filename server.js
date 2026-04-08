@@ -23,4 +23,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': TYPES[path.extname(filePath)] || 'text/plain' });
     res.end(data);
   });
-}).listen(process.env.PORT || 3000, () => console.log(`PawChef running on port ${process.env.PORT || 3000}`));
+}).listen(process.env.PORT || 3000, () => console.log(`MealMutt running on port ${process.env.PORT || 3000}`));

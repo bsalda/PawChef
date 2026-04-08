@@ -1,5 +1,5 @@
 // ===================================================
-//  PawChef — Dog-Safe Supplement Database
+//  MealMutt — Dog-Safe Supplement Database
 //  Sources: AKC, PetMD, VCA Hospitals, Dogs Naturally
 //  All amounts are per 10 lbs body weight
 // ===================================================

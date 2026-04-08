@@ -1,5 +1,5 @@
 // ===================================================
-//  PawChef — Recipe & Safety Data
+//  MealMutt — Recipe & Safety Data
 // ===================================================
 
 const RECIPES = [

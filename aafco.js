@@ -1,5 +1,5 @@
 // ===================================================
-//  PawChef — AAFCO Dog Food Nutrient Compliance
+//  MealMutt — AAFCO Dog Food Nutrient Compliance
 //  Source: AAFCO Dog Food Nutrient Profiles (2016)
 //  Values expressed per 1,000 kcal Metabolizable Energy
 // ===================================================

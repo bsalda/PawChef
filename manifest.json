@@ -1,6 +1,6 @@
 {
-  "name": "PawChef — Homemade Dog Food Guide",
-  "short_name": "PawChef",
+  "name": "MealMutt — Homemade Dog Food Guide",
+  "short_name": "MealMutt",
   "description": "Easy homemade meals, perfectly portioned for your dog.",
   "start_url": "/",
   "display": "standalone",

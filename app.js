@@ -1,5 +1,5 @@
 // ===================================================
-//  PawChef — App Logic
+//  MealMutt — App Logic
 // ===================================================
 
 // Guard: if GA is blocked by an ad blocker, make gtag a no-op so calls don't throw.
@@ -29,7 +29,7 @@ const STRIPE_LINKS = {
 };
 
 function isPro() {
-  return localStorage.getItem("pawchef_pro") === "true";
+  return localStorage.getItem("mealmutt_pro") === "true";
 }
 
 // ---- License Key Redemption ----
@@ -37,14 +37,14 @@ function isPro() {
 // Currently validates key format client-side only. A real implementation must
 // POST the key to your backend, verify it against your database of issued keys
 // (e.g. from a Stripe webhook), mark it used, and return a signed token.
-const LICENSE_KEY_PATTERN = /^PAWCHEF-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+const LICENSE_KEY_PATTERN = /^MEALMUTT-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
 
 function redeemLicenseKey() {
   const input = $("license-key-input");
   const key   = input.value.trim().toUpperCase();
 
   if (!LICENSE_KEY_PATTERN.test(key)) {
-    showLicenseError("Invalid key format. Keys look like: PAWCHEF-XXXX-XXXX-XXXX");
+    showLicenseError("Invalid key format. Keys look like: MEALMUTT-XXXX-XXXX-XXXX");
     return;
   }
 
@@ -53,8 +53,8 @@ function redeemLicenseKey() {
   // production you must validate the key against your issued-keys list on
   // a server you control so buyers can't share or forge keys.
   gtag("event", "license_key_activated");
-  localStorage.setItem("pawchef_pro", "true");
-  localStorage.setItem("pawchef_license_key", key);
+  localStorage.setItem("mealmutt_pro", "true");
+  localStorage.setItem("mealmutt_license_key", key);
   input.value = "";
   hideLicenseError();
   closeUpgradeModal();
@@ -79,7 +79,7 @@ function updateProBanner() {
   const btn  = $("pro-status-btn");
   if (isPro()) {
     bar.classList.add("is-pro");
-    text.innerHTML = "⭐ <strong>PawChef Pro</strong> — All features unlocked";
+    text.innerHTML = "⭐ <strong>MealMutt Pro</strong> — All features unlocked";
     btn.classList.add("hidden");
   } else {
     bar.classList.remove("is-pro");
@@ -109,7 +109,7 @@ function goToStripe(plan) {
 }
 
 // ---- Dog Profile Save / Load ----
-const PROFILES_KEY   = "pawchef_profiles";
+const PROFILES_KEY   = "mealmutt_profiles";
 const FREE_MAX_PROFILES = 1;
 
 function getProfiles() {
@@ -194,7 +194,7 @@ function renderSavedProfiles() {
 }
 
 // ---- EmailJS Config ----
-const EMAILJS_SERVICE_ID  = "service_pawchef";
+const EMAILJS_SERVICE_ID  = "service_mealmutt";
 const EMAILJS_TEMPLATE_ID = "template_8yssota";
 const EMAILJS_PUBLIC_KEY  = "4V4ksguJ0axB2Wsml";
 
@@ -264,7 +264,7 @@ async function joinWaitlist(e) {
 
     gtag("event", "email_signup_completed", { referral_source: referral });
     // Remember in localStorage so we don't ask again
-    localStorage.setItem("pawchef_waitlist", email);
+    localStorage.setItem("mealmutt_waitlist", email);
 
   } catch (err) {
     console.error("EmailJS error:", err);
@@ -275,10 +275,10 @@ async function joinWaitlist(e) {
 }
 
 function showToast(msg, type = "info") {
-  const existing = document.querySelector(".pawchef-toast");
+  const existing = document.querySelector(".mealmutt-toast");
   if (existing) existing.remove();
   const toast = document.createElement("div");
-  toast.className = "pawchef-toast";
+  toast.className = "mealmutt-toast";
   const colors = { success: "#16a34a", error: "#dc2626", info: "#0369a1" };
   toast.style.cssText = `
     position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);
@@ -722,7 +722,7 @@ const SUPP_AFFILIATE = {
 function suppAffiliateLinks(id) {
   const aff = SUPP_AFFILIATE[id];
   if (!aff) return "";
-  const amzUrl   = `https://www.amazon.com/s?k=${aff.amazon}&tag=pawchef-20`;
+  const amzUrl   = `https://www.amazon.com/s?k=${aff.amazon}&tag=mealmutt-20`;
   const chewyUrl = `https://www.chewy.com/s?query=${aff.chewy}`;
   return `<div class="aff-row">
     <a href="${amzUrl}" target="_blank" rel="noopener" class="aff-btn amazon">🛒 Amazon</a>
@@ -793,7 +793,7 @@ renderSavedProfiles();
 
 // If already on waitlist, show confirmed state immediately
 (function checkWaitlistState() {
-  const saved = localStorage.getItem("pawchef_waitlist");
+  const saved = localStorage.getItem("mealmutt_waitlist");
   if (saved) {
     $("waitlist-default").classList.add("hidden");
     $("waitlist-success").classList.remove("hidden");

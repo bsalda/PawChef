@@ -1,8 +1,8 @@
-// PawChef Service Worker — caches static assets only.
+// MealMutt Service Worker — caches static assets only.
 // External API calls (USDA FoodData Central, EmailJS, Stripe) are never
 // intercepted and always go directly to the network.
 
-const CACHE_NAME = 'pawchef-static-v2';
+const CACHE_NAME = 'mealmutt-static-v3';
 
 const STATIC_ASSETS = [
   '/',
