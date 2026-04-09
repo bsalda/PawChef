@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MealMutt — Easy Dog Food Cooking Guide</title>
+  <meta name="description" content="Free homemade dog food recipes with AAFCO-checked nutrition, portioned by your dog's weight, age, and breed. Calculate meals in minutes." />
+
+  <!-- Open Graph (social sharing previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mealmutt.com/" />
+  <meta property="og:title" content="MealMutt — Easy Dog Food Cooking Guide" />
+  <meta property="og:description" content="Free homemade dog food recipes with AAFCO-checked nutrition, portioned by your dog's weight, age, and breed." />
+  <meta property="og:image" content="https://mealmutt.com/icons/icon-512.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZTRQTY7SE"></script>
@@ -29,6 +38,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Skip link for keyboard / screen-reader users -->
+  <a class="skip-link" href="#section-profile">Skip to main content</a>
 
   <!-- ===== HEADER ===== -->
   <header class="header">
@@ -57,7 +69,7 @@
           <!-- Heart in pad -->
           <path d="M42 67 L37 61 C34.5 58 35.5 54.5 38.5 54.5 C40 54.5 42 56.5 42 56.5 C42 56.5 44 54.5 45.5 54.5 C48.5 54.5 49.5 58 47 61 Z" fill="#BE5A38"/>
         </svg>
-        <span class="logo-text">MealMutt</span>
+        <h1 class="logo-text">MealMutt</h1>
       </div>
       <p class="tagline">Easy homemade meals, perfectly portioned for your dog</p>
     </div>
@@ -85,7 +97,7 @@
   <main class="container">
 
     <!-- STEP 1 — Dog Profile -->
-    <section class="card" id="section-profile">
+    <section class="card" id="section-profile" aria-current="step">
       <div class="card-header">
         <span class="step-badge">Step 1</span>
         <h2>Tell Us About Your Dog</h2>
@@ -133,7 +145,7 @@
                 <span class="activity-icon">
                   <picture>
                     <source srcset="icon-low.webp" type="image/webp" />
-                    <img src="icon-low.png" alt="Sleeping dog" class="activity-img" width="120" height="120" />
+                    <img src="icon-low.png" alt="Sleeping dog" class="activity-img" width="120" height="120" loading="lazy" />
                   </picture>
                 </span>
                 <span>Low</span>
@@ -145,7 +157,7 @@
                 <span class="activity-icon">
                   <picture>
                     <source srcset="icon-moderate.webp" type="image/webp" />
-                    <img src="icon-moderate.png" alt="Dog with leash" class="activity-img" width="120" height="120" />
+                    <img src="icon-moderate.png" alt="Dog with leash" class="activity-img" width="120" height="120" loading="lazy" />
                   </picture>
                 </span>
                 <span>Moderate</span>
@@ -157,7 +169,7 @@
                 <span class="activity-icon">
                   <picture>
                     <source srcset="icon-high.webp" type="image/webp" />
-                    <img src="icon-high.png" alt="Dog running" class="activity-img" width="120" height="120" />
+                    <img src="icon-high.png" alt="Dog running" class="activity-img" width="120" height="120" loading="lazy" />
                   </picture>
                 </span>
                 <span>High</span>
@@ -169,7 +181,7 @@
                 <span class="activity-icon">
                   <picture>
                     <source srcset="icon-working.webp" type="image/webp" />
-                    <img src="icon-working.png" alt="Working dog" class="activity-img" width="120" height="120" />
+                    <img src="icon-working.png" alt="Working dog" class="activity-img" width="120" height="120" loading="lazy" />
                   </picture>
                 </span>
                 <span>Working</span>
@@ -406,11 +418,11 @@
       Always consult a licensed veterinarian before changing your dog's diet, especially for puppies,
       seniors, or dogs with health conditions.
     </p>
-    <p class="footer-links">
+    <nav class="footer-links" aria-label="Legal">
       <a href="privacy.html">Privacy Policy</a> ·
       <a href="terms.html">Terms of Use</a> ·
       <a href="refund.html">Refund Policy</a>
-    </p>
+    </nav>
     <p class="footer-copy">© 2026 MealMutt. All rights reserved.</p>
   </footer>
 
