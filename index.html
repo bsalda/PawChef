@@ -206,7 +206,6 @@
 
         <div class="profile-actions">
           <button class="btn-primary" id="btn-calculate">Calculate My Dog's Needs →</button>
-          <button class="btn-secondary" id="btn-save-profile" onclick="saveProfile()">💾 Save Profile</button>
         </div>
 
         <!-- Saved Profiles (shown when profiles exist) -->
@@ -246,7 +245,10 @@
 
         <div class="tip-box" id="health-tip"></div>
 
-        <button class="btn-primary" id="btn-show-recipes">Choose a Recipe →</button>
+        <div class="profile-actions">
+          <button class="btn-primary" id="btn-show-recipes">Choose a Recipe →</button>
+          <button class="btn-secondary" id="btn-save-profile" onclick="saveProfile()">💾 Save This Dog's Profile</button>
+        </div>
       </div>
     </section>
 
@@ -363,14 +365,14 @@
           <div class="waitlist-text">
             <div class="waitlist-icon">🐾</div>
             <h3>Get New Recipes &amp; Nutrition Tips Free</h3>
-            <p>Be one of the first to get weekly homemade meal ideas, vet tips, and exclusive MealMutt Pro founding member access.</p>
+            <p>Join dog parents already cooking healthier meals at home. Get weekly recipes, vet tips, and exclusive MealMutt Pro founding member access.</p>
           </div>
           <form class="waitlist-form" id="waitlist-form" onsubmit="joinWaitlist(event)" novalidate>
             <div class="waitlist-fields">
               <input type="text"  id="waitlist-name"    placeholder="Your name"       autocomplete="name" />
               <input type="email" id="waitlist-email"   placeholder="your@email.com"  required autocomplete="email" />
-              <select id="waitlist-referral">
-                <option value="">How did you find us?</option>
+              <select id="waitlist-referral" aria-label="How did you find us? (optional)">
+                <option value="">How did you find us? (optional)</option>
                 <option value="Google Search">🔍 Google Search</option>
                 <option value="Instagram">📸 Instagram</option>
                 <option value="TikTok">🎵 TikTok</option>
@@ -397,10 +399,11 @@
       </div>
     </section>
 
-    <!-- SAFETY REFERENCE -->
+    <!-- SAFETY REFERENCE — always visible standalone guide -->
     <section class="card" id="section-safety">
       <div class="card-header">
         <h2>🚨 Quick Safety Reference</h2>
+        <p class="section-subtitle">Bookmark this — a handy guide for any homemade dog meal, not just MealMutt recipes.</p>
       </div>
       <div class="card-body">
         <div class="safety-columns" id="safety-reference"></div>

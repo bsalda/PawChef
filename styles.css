@@ -103,6 +103,7 @@ body {
   gap: .75rem;
 }
 .card-header h2 { font-size: 1.15rem; font-weight: 700; color: var(--text); }
+.section-subtitle { font-size: .9rem; color: var(--text-muted); font-weight: 400; margin-top: .25rem; }
 .card-body { padding: 1.5rem; }
 
 .step-badge {
