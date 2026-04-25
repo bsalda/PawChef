@@ -13,6 +13,7 @@ const state = {
   size: "",
   activity: "",
   health: [],
+  allergens: [],
   dailyCalories: 0,
   dailyOz: 0,
   multiplier: 1,
@@ -330,6 +331,12 @@ $("btn-calculate").addEventListener("click", () => {
   state.size     = size;
   state.health   = [...document.querySelectorAll(".tag-checkbox input:checked")].map(c => c.value);
 
+  if (state.health.includes("allergies")) {
+    state.allergens = [...document.querySelectorAll(".allergen-pill:checked")].map(c => c.value);
+  } else {
+    state.allergens = [];
+  }
+
   // ---- Calorie Calculation ----
   // RER (Resting Energy Requirement): 70 × (weight in kg) ^ 0.75
   const kg = weight * 0.453592;
@@ -419,11 +426,16 @@ document.addEventListener("click", e => {
 
 function renderRecipes(filter) {
   const grid     = $("recipe-grid");
-  const filtered = filter === "all" ? RECIPES : RECIPES.filter(r => r.protein === filter);
+  const filtered = (filter === "all" ? RECIPES : RECIPES.filter(r => r.protein === filter))
+    .filter(r =>
+      state.allergens.length === 0 ||
+      !r.allergens.some(a => state.allergens.includes(a))
+    );
   const pro      = isPro();
+  const dynamicFreeIds = filtered.slice(0, 3).map(r => r.id);
 
   grid.innerHTML = filtered.map(r => {
-    const locked = !pro && !FREE_RECIPE_IDS.includes(r.id);
+    const locked = !pro && !dynamicFreeIds.includes(r.id);
     return `
     <div class="recipe-card${locked ? " locked" : ""}" data-id="${r.id}" tabindex="0" role="button" aria-label="${locked ? "Pro: " : ""}${r.name}">
       ${locked ? `<span class="recipe-lock-badge">🔒 Pro</span>` : ""}
@@ -433,6 +445,7 @@ function renderRecipes(filter) {
       <div class="recipe-tags">
         ${r.tags.map(t => `<span class="recipe-tag ${t.startsWith('🍗')||t.startsWith('🥩')||t.startsWith('🐟')||t.startsWith('🦃') ? 'protein' : t.includes('min') ? 'time' : ''}">${t}</span>`).join("")}
       </div>
+      ${!locked && state.allergens.length > 0 ? `<span class="allergy-safe-badge">Allergy-safe</span>` : ""}
     </div>`;
   }).join("") || `<p style="color:var(--text-muted);padding:.5rem">No recipes found for this filter.</p>`;
 

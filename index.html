@@ -228,7 +228,25 @@
             <label class="tag-checkbox"><input type="checkbox" value="overweight" /> Overweight</label>
             <label class="tag-checkbox"><input type="checkbox" value="underweight" /> Underweight</label>
             <label class="tag-checkbox"><input type="checkbox" value="kidney" /> Kidney Issues</label>
-            <label class="tag-checkbox"><input type="checkbox" value="allergies" /> Food Allergies</label>
+            <label class="tag-checkbox"><input type="checkbox" value="allergies" onchange="
+              var p=document.getElementById('allergen-picker');
+              p.hidden=!this.checked;
+              if(!this.checked)p.querySelectorAll('.allergen-pill').forEach(function(c){c.checked=false;});
+            " /> Food Allergies</label>
+            <div id="allergen-picker" hidden style="width:100%;margin-top:.5rem;">
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="chicken" /> Chicken</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="beef" /> Beef</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="turkey" /> Turkey</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="fish" /> Fish</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="lamb" /> Lamb</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="egg" /> Egg</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="dairy" /> Dairy</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="wheat" /> Wheat</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="soy" /> Soy</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="corn" /> Corn</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="potato" /> Potato</label>
+              <label class="tag-checkbox"><input type="checkbox" class="allergen-pill" value="pea" /> Pea</label>
+            </div>
             <label class="tag-checkbox"><input type="checkbox" value="pregnant" /> Pregnant / Nursing</label>
           </div>
         </div>

@@ -47,6 +47,7 @@ const RECIPES = [
     safeIngredients: ["Cooked chicken (boneless)", "Brown rice", "Carrots", "Peas", "Spinach", "Fish oil", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No onion or garlic", "No salt or seasoning", "No cooked bones", "No grapes or raisins"],
     nutritionPerServing: { calories: 420, protein: "52g", fat: "9g", carbs: "28g", fiber: "3g" },
+    allergens: ["chicken", "fish", "pea"],
   },
 
   {
@@ -89,6 +90,7 @@ const RECIPES = [
     safeIngredients: ["Chicken thigh", "Sweet potato", "Green beans", "Blueberries", "Coconut oil", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No butter or salt", "No onion powder", "No macadamia nuts", "No xylitol"],
     nutritionPerServing: { calories: 390, protein: "44g", fat: "11g", carbs: "32g", fiber: "4g" },
+    allergens: ["chicken"],
   },
 
   // ——— BEEF ———
@@ -132,6 +134,7 @@ const RECIPES = [
     safeIngredients: ["Lean ground beef", "Zucchini", "Broccoli (small amounts)", "Brown rice", "Carrots", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No seasoning or spices", "No onions or garlic", "No soy sauce", "No fatty beef cuts"],
     nutritionPerServing: { calories: 480, protein: "58g", fat: "14g", carbs: "18g", fiber: "3g" },
+    allergens: ["beef"],
   },
 
   {
@@ -174,6 +177,7 @@ const RECIPES = [
     safeIngredients: ["Beef liver (in moderation)", "Lean beef", "Plain oats", "Pumpkin puree", "Eggs", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No raw liver to excess", "No added salt", "No spices", "No onion or garlic"],
     nutritionPerServing: { calories: 360, protein: "48g", fat: "10g", carbs: "22g", fiber: "4g" },
+    allergens: ["beef", "egg"],
   },
 
   // ——— FISH ———
@@ -217,6 +221,7 @@ const RECIPES = [
     safeIngredients: ["Cooked salmon (boneless)", "Quinoa", "Spinach", "Cucumber", "Blueberries", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["NEVER raw salmon", "No seasoning or salt", "No lemon (citrus)", "No soy sauce"],
     nutritionPerServing: { calories: 400, protein: "50g", fat: "12g", carbs: "26g", fiber: "3g" },
+    allergens: ["fish"],
   },
 
   {
@@ -259,6 +264,7 @@ const RECIPES = [
     safeIngredients: ["Canned tuna in water", "Cooked eggs", "White rice", "Peas", "Carrots", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No tuna in oil", "No salted/flavored tuna", "No raw eggs (salmonella risk)", "No onion or garlic"],
     nutritionPerServing: { calories: 350, protein: "46g", fat: "9g", carbs: "30g", fiber: "2g" },
+    allergens: ["fish", "egg", "pea"],
   },
 
   // ——— TURKEY ———
@@ -302,6 +308,7 @@ const RECIPES = [
     safeIngredients: ["Lean ground turkey", "Plain pumpkin puree", "Sweet potato", "Peas", "Celery", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No pumpkin pie spice or filling", "No turkey skin (high fat)", "No seasoning", "No cooked turkey bones"],
     nutritionPerServing: { calories: 370, protein: "48g", fat: "8g", carbs: "30g", fiber: "5g" },
+    allergens: ["turkey", "pea"],
   },
 
   {
@@ -345,6 +352,7 @@ const RECIPES = [
     safeIngredients: ["Ground turkey", "Plain oats", "Eggs", "Carrots", "Spinach", "Pumpkin puree", "Eggshell powder (calcium source)", "Wheat germ oil (vitamin E source)"],
     unsafeSwaps: ["No bread crumbs with seasoning", "No onion or garlic", "No salt", "No xylitol"],
     nutritionPerServing: { calories: 410, protein: "44g", fat: "10g", carbs: "28g", fiber: "4g" },
+    allergens: ["turkey", "egg"],
   },
 ];
 
