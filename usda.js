@@ -25,7 +25,7 @@ const INGREDIENT_MAP = [
   { keywords: ['chicken thigh'],                fdcId: 172861 },
   { keywords: ['ground turkey', 'turkey'],      fdcId: 171506 },
   { keywords: ['ground beef', 'lean beef'],     fdcId: 174036 },
-  { keywords: ['beef liver', 'liver'],          fdcId: 168626 },
+  { keywords: ['beef liver'],                    fdcId: 168626 },
   { keywords: ['salmon'],                       fdcId: 175167 },
   { keywords: ['tuna'],                         fdcId: 175159 },
   { keywords: ['egg'],                          fdcId: 173424 },
@@ -47,6 +47,25 @@ const INGREDIENT_MAP = [
   { keywords: ['coconut oil'],                  fdcId: 172336 },
   { keywords: ['eggshell powder', 'eggshell'], fdcId: 2346009 },
   { keywords: ['wheat germ oil', 'wheat germ'], fdcId: 172420 },
+
+  // ── NEW PROTEINS ──────────────────────────────────────────────
+  { keywords: ['ground lamb', 'lamb'],          fdcId: 2727570 },  // Lamb, ground, raw — Foundation
+  { keywords: ['ground venison', 'venison'],    fdcId: 172602  },  // Game meat, deer, ground, raw — SR Legacy
+  { keywords: ['duck breast', 'duck'],          fdcId: 172410  },  // Duck, domesticated, meat only, raw — SR Legacy
+  { keywords: ['rabbit'],                       fdcId: 172521  },  // Game meat, rabbit, domesticated, composite of cuts, raw — SR Legacy
+
+  // ── FISH ──────────────────────────────────────────────────────
+  // sardines omitted — no water-packed USDA entry; oil-packed (175139) would overstate fat
+  { keywords: ['cod fillet', 'cod'],            fdcId: 2684444 },  // Fish, cod, Atlantic, wild caught, raw — Foundation
+  { keywords: ['tilapia'],                      fdcId: 2684442 },  // Fish, tilapia, farm raised, raw — Foundation
+
+  // ── ORGAN MEATS ───────────────────────────────────────────────
+  { keywords: ['beef heart', 'heart'],          fdcId: 168625  },  // Beef, variety meats and by-products, heart, raw — SR Legacy
+  { keywords: ['chicken liver', 'liver'],       fdcId: 171060  },  // Chicken, liver, all classes, raw — SR Legacy
+  { keywords: ['beef kidney', 'kidney'],        fdcId: 169449  },  // Beef, variety meats and by-products, kidneys, raw — SR Legacy
+
+  // ── VEGETABLES ────────────────────────────────────────────────
+  { keywords: ['white potato', 'potato'],       fdcId: 170028  },  // Potatoes, white, flesh and skin, raw — SR Legacy
 ];
 
 // Unit → grams conversion

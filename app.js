@@ -443,7 +443,7 @@ function renderRecipes(filter) {
       <div class="recipe-name">${r.name}</div>
       <div class="recipe-desc">${r.desc}</div>
       <div class="recipe-tags">
-        ${r.tags.map(t => `<span class="recipe-tag ${t.startsWith('🍗')||t.startsWith('🥩')||t.startsWith('🐟')||t.startsWith('🦃') ? 'protein' : t.includes('min') ? 'time' : ''}">${t}</span>`).join("")}
+        ${r.tags.map(t => `<span class="recipe-tag ${t.startsWith('🍗')||t.startsWith('🥩')||t.startsWith('🐟')||t.startsWith('🦃')||t.startsWith('🐑')||t.startsWith('🦌')||t.startsWith('🦆')||t.startsWith('🐇') ? 'protein' : t.includes('min') ? 'time' : ''}">${t}</span>`).join("")}
       </div>
       ${!locked && state.allergens.length > 0 ? `<span class="allergy-safe-badge">Allergy-safe</span>` : ""}
     </div>`;
