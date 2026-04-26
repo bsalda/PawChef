@@ -93,6 +93,7 @@ function updateProBanner() {
 }
 
 function showUpgradeModal() {
+  gtag("event", "upgrade_modal_shown");
   // Show the status bar now — user has discovered the paywall naturally
   const bar = $("pro-status-bar");
   bar.classList.remove("hidden");
