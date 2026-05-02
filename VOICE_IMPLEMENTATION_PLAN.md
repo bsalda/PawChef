@@ -63,16 +63,38 @@ Run:
 Open your Zapier flow. Replace the current celebratory email copy with the exact target copy from the appendix:
 
 ```
-Your MealMutt key:
-[KEY]
+Subject: Your MealMutt Pro key
 
-Paste it into Settings → License. If it doesn't work,
-reply to this email — I'll fix it.
+Your Pro license is ready.
 
-— Bryan
+Key: MEALMUTT-XXXX-XXXX-XXXX
+
+To activate:
+1. Go to mealmutt.com
+2. Open the Upgrade window
+3. Expand "Already have a license key?"
+4. Paste the key, click Redeem
+
+What Pro unlocks:
+• All 25+ recipes (+ new ones added monthly)
+• Full supplement booster with affiliate shop links
+• Save unlimited dog profiles
+• AAFCO 5-nutrient check for every recipe
+• Print & batch cooking mode
+• Live USDA nutrition data per recipe
+
+Questions or issues: support@mealmutt.com
+
+— MealMutt
 ```
 
-5-minute edit. Removes a tone violation that fires every single purchase. Keep this exact copy when the Vercel webhook replaces Zapier at 50 paying customers.
+In Zapier:
+- The `MEALMUTT-XXXX-XXXX-XXXX` line should pull from the license key variable your flow already generates.
+- If `support@mealmutt.com` doesn't exist as a real inbox yet, **create it first** (or set up forwarding to your personal email) before this email goes live. Listing a contact address that bounces is worse than no contact at all.
+
+Removes the celebratory tone violation that fires every single purchase. Keep this exact copy when the Vercel webhook replaces Zapier at 50 paying customers.
+
+**Test before you call it done:** run a real test purchase (use a Stripe test card: `4242 4242 4242 4242`, any future expiry, any CVC), confirm the email renders correctly with the actual key in place of the placeholder, and walk through the activation steps yourself to verify they still work.
 
 ---
 
@@ -141,6 +163,58 @@ Track monthly. If they don't move within 60 days, the bottleneck isn't voice —
 - **Reddit comment upvote ratio.** Target: average ≥ +3 upvotes, no removals.
 - **FAQ scroll depth** in GA4. The FAQ should pull the ~62% who don't currently scroll past the fold.
 - **Email reply rate** to Stripe receipts. Should be near zero with the rewritten version (it's clearer). If you're getting more replies, the new copy confused someone — fix it.
+
+---
+
+## How to actually track these (15-min baseline + 5-min/wk)
+
+The metrics above only work if you check them. Here's the click-path for each, plus what to capture today vs. weekly. **The only metrics that matter are the ones you actually look at** — if you find yourself skipping the Friday ritual, drop the harder ones and keep the easy ones. One tracked metric beats four ignored ones.
+
+### One-time baseline capture (do this today, ~15 min)
+
+Open a notes file (or a new section at the bottom of `BRAND_VOICE.md` called "Tracking baselines") and write down today's numbers. Without baselines you can't tell if anything moved.
+
+**1. Landing page conversion rate**
+- Open GA4 → Reports → Engagement → Events. Find `recipe_generated` row. Note the count for the last 30 days.
+- Reports → Acquisition → Traffic acquisition. Note total Sessions for the same 30-day window.
+- Calculate: `recipe_generated ÷ sessions × 100` = baseline conversion %.
+- Write down: `[date] — conversion rate: X.X% (Y recipes / Z sessions)`.
+
+**2. Reddit upvote average**
+- Go to `reddit.com/user/[your_username]` → Comments tab.
+- If you've already commented in the listening phase, average the scores of your last 10 comments. If not, baseline = 0 and you build from comment #1.
+- Write down: `[date] — Reddit average: +X.X over last N comments`.
+
+**3. FAQ scroll depth — SKIP for now.** You can't measure this until the FAQ ships (Phase 2.2). When it ships:
+- Verify GA4 Enhanced Measurement → Scrolls toggle is ON (Admin → Data Streams → your stream → Enhanced Measurement).
+- Wait 7 days for data to accumulate, then capture baseline.
+
+**4. Stripe email reply rate**
+- Set up a Gmail label called `stripe-replies` (Settings → Labels → Create new label).
+- For now, baseline = unknown. You'll start counting once new copy ships in Zapier.
+
+### Weekly Friday ritual (5 min)
+
+Every Friday, open the same notes file and add a new dated row. Just the numbers, no analysis:
+
+```
+[date]
+- Conversion: X.X% (Y / Z) — Δ vs last week: +/- X.X%
+- Reddit avg: +X.X over last N comments
+- FAQ scroll-to-90%: X% (or "N/A — FAQ not shipped")
+- Stripe replies this week: X / Y purchases
+```
+
+Eyeball the deltas. If something moved a lot in either direction, ask why. If everything is flat for 4 weeks straight, the bottleneck isn't voice — re-read the "What I'm NOT having you do" section above and figure out which lever you're actually missing (distribution, product, or pricing).
+
+### When to stop tracking what
+
+| If after 4 weeks you find... | Then... |
+|---|---|
+| You're not opening GA4 on Fridays | Drop conversion rate and FAQ scroll. Keep only Reddit avg + email replies (both are 60-second checks). |
+| All four metrics are flat | The bottleneck isn't voice. Stop iterating on copy and re-examine distribution channels or pricing. |
+| Conversion rate moved but no new sales | Top of funnel is fine; paywall or pricing is the problem. Switch focus there. |
+| Reddit avg keeps trending down | Either your replies are reading as promotional, or you're commenting in the wrong subreddits. Re-read appendix section 8 of `BRAND_VOICE.md`. |
 
 ---
 
